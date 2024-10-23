@@ -7,7 +7,7 @@ let config = {
         secure: true,
         auth: {
             user: 'kinron1024@163.com',
-            pass: ''
+            pass: 'ZUVCQRskShazBhb9'
         }
     },
     mailOptions: {

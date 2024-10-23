@@ -2,7 +2,7 @@ class Personal {
     constructor(sqlite) {
         this.db = new sqlite.Database('data/data.db', () => {
             console.log('数据库打开成功')
-            this.db.run('CREATE TABLE IF NOT EXISTS personal (id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, password VARCHAR)');
+            this.db.run('CREATE TABLE IF NOT EXISTS personal (id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, password VARCHAR, imgUrl VARCHAR, name VARCHAR,sex VARCHAR)');
         })
     }
     insert_personal(param) {
@@ -23,6 +23,12 @@ class Personal {
                 resolve(row)
             })
         })
+    }
+    update_info(param) {
+        let update = this.db.prepare("UPDATE personal set password=?, name=?, sex=?, imgUrl=? where email=?")
+        update.run(param.password, param.name, param.sex, param.imgUrl, param.email)
+        update.finalize()
+        console.log('数据更新成功')
     }
 }
 
