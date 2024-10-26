@@ -6,12 +6,12 @@ let config = {
         port: 465,
         secure: true,
         auth: {
-            user: 'kinron1024@163.com',
-            pass: 'ZUVCQRskShazBhb9'
+            user: '你的邮箱',
+            pass: '鉴权码'
         }
     },
     mailOptions: {
-        from: 'kinron1024@163.com',
+        from: '你的邮箱',
         to: '',
         subject: 'Verification Code',
         text: ''
