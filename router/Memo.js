@@ -10,7 +10,7 @@ function Memo({ router, db, url }) {
             res.send(JSON.stringify({
                 code: 200,
                 message: "保存成功"
-            })) // 数据响应
+            }))
         })
     })
     router.post("/updateMemo", function (req, res) {
@@ -24,7 +24,7 @@ function Memo({ router, db, url }) {
             res.send(JSON.stringify({
                 code: 200,
                 message: "修改成功"
-            })) // 数据响应
+            }))
         })
     })
     router.get("/selectMemo", function (req, res) {
@@ -55,7 +55,7 @@ function Memo({ router, db, url }) {
             res.send(JSON.stringify({
                 code: 200,
                 message: "删除成功"
-            })) // 数据响应
+            }))
         })
     })
 }

@@ -29,12 +29,12 @@ function Personal({ router, db, url }) {
                     code: 200,
                     message: "注册成功",
                     token: CryptoJS.SHA256(data.email).toString(CryptoJS.enc.Hex)
-                })) // 数据响应
+                }))
             } else {
                 res.send(JSON.stringify({
                     code: 400,
                     message: "验证码错误"
-                })) // 数据响应
+                }))
             }
 
         })
@@ -51,7 +51,7 @@ function Personal({ router, db, url }) {
             res.send(JSON.stringify({
                 code: 200,
                 message: '操作成功'
-            })) // 数据响应
+            }))
         })
     })
     router.post("/login", function (req, res) {
@@ -107,12 +107,12 @@ function Personal({ router, db, url }) {
                 res.send(JSON.stringify({
                     code: 200,
                     message: "密码修改成功"
-                })) // 数据响应
+                }))
             } else {
                 res.send(JSON.stringify({
                     code: 400,
                     message: "验证码错误"
-                })) // 数据响应
+                }))
             }
         })
     })
