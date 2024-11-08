@@ -5,6 +5,7 @@ const router = express.Router()
 const app = express()
 const personal = require('./router/Personal')
 const memo = require('./router/Memo')
+const setting = require('./router/Setting')
 const port = process.env.PORT || 4000;
 const path = require('path')
 
@@ -13,6 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 personal.Personal({router, url, db: db.personal})
 memo.Memo({router, url, db: db.memo})
+setting.Setting({router, url, db: db.setting})
 
 app.use(router)
 
