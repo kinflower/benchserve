@@ -9,8 +9,8 @@ class Setting {
         console.log('数据插入成功')
     }
     update_setting(param) {
-        let update = this.db.prepare("UPDATE setting set imgUrl=?, fontSize=?, fontColor=?, radius=? where id=?")
-        update.run(param.imgUrl, param.fontSize, param.fontColor, param.radius, param.id)
+        let update = this.db.prepare("UPDATE setting set imgUrl=?, fontSize=?, fontColor=?, radius=?, column=?, size=? where id=?")
+        update.run(param.imgUrl, param.fontSize, param.fontColor, param.radius, param.column, param.size, param.id)
         update.finalize()
         console.log('数据更新成功')
     }

@@ -8,7 +8,7 @@ const db = new sqlite.Database('data/data.db', () => {
     db.run('CREATE TABLE IF NOT EXISTS personal (id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, password VARCHAR, imgUrl VARCHAR, name VARCHAR,sex VARCHAR)');
     db.run('CREATE TABLE IF NOT EXISTS memo (id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR, content TEXT)');
     db.run('CREATE TABLE IF NOT EXISTS app (id INTEGER PRIMARY KEY AUTOINCREMENT, appName VARCHAR, url VARCHAR, imgUrl VARCHAR, type VARCHAR)');
-    db.run('CREATE TABLE IF NOT EXISTS setting (id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, imgUrl VARCHAR, fontSize VARCHAR, fontColor VARCHAR, radius VARCHAR, uploadType VARCHAR)');
+    db.run('CREATE TABLE IF NOT EXISTS setting (id INTEGER PRIMARY KEY AUTOINCREMENT, email VARCHAR, imgUrl VARCHAR, fontSize VARCHAR, fontColor VARCHAR, radius VARCHAR, uploadType VARCHAR, column VARCHAR, size VARCHAR)');
 })
 
 let personal = new Personal(db)
