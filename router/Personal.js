@@ -151,7 +151,7 @@ function Personal({ router, db, url }) {
         res.send(JSON.stringify({
             code: 200,
             message: '文件上传成功',
-            file: `http://127.0.0.1:4000/${req.file.filename}`
+            file: `${req.file.filename}`
         }));
     })
     router.post("/updateInfo", function (req, res) {
