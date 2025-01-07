@@ -151,7 +151,7 @@ function Personal({ router, db, url }) {
         res.send(JSON.stringify({
             code: 200,
             message: '文件上传成功',
-            file: `https://hksofy-hzcsfn-4000.app.cloudstudio.work/${req.file.filename}`
+            file: `https://kywnnw-mgokjq-4000.app.cloudstudio.work/${req.file.filename}`
         }));
     })
     router.post("/updateInfo", function (req, res) {

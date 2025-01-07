@@ -22,6 +22,5 @@ blog.Blog({router, url, db: db.blog})
 app.use(router)
 
 app.listen(port, function () {
-    // 服务地址：https://hksofy-hzcsfn-4000.app.cloudstudio.work/
-    console.log('http://127.0.0.1:4000')
+    console.log('http://localhost:4000')
 })

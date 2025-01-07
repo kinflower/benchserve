@@ -3,7 +3,7 @@ function generateOTP() {
     return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
-
+// 分页
 function paginateArray(array, current, size) {
     var result = [];
     array.forEach((e, index) => {
