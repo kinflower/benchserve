@@ -2,27 +2,27 @@ class Blog {
     constructor(db) {
         this.db = db
     }
-    insert_memo(param) {
-        let add = this.db.prepare("INSERT OR REPLACE INTO memo (title, content) VALUES (?,?)");
-        add.run(param.title, param.content)
+    insert_blog(param) {
+        let add = this.db.prepare("INSERT OR REPLACE INTO blog (title, src, time, type) VALUES (?,?,?,?)");
+        add.run(param.title, param.src, param.time, param.type)
         add.finalize()
         console.log('数据插入成功')
     }
-    update_memo(param) {
-        let update = this.db.prepare("UPDATE memo set title=?, content=? where id=?")
-        update.run(param.title, param.content, param.id)
+    update_blog(param) {
+        let update = this.db.prepare("UPDATE blog set title=?, src=?, time=?, type=? where id=?")
+        update.run(param.title, param.src, param.time, param.type, param.id)
         update.finalize()
         console.log('数据更新成功')
     }
-    select_memo() {
+    select_blog() {
         return new Promise((resolve) => {
-            this.db.all("SELECT * FROM memo", (err, row) => {
+            this.db.all("SELECT * FROM blog", (err, row) => {
                 resolve(row)
             })
         })
     }
-    remove_memo(param) {
-        let update = this.db.prepare(`DELETE FROM memo where id in (${param.map((_, i) => `?`).join(',')})`)
+    remove_blog(param) {
+        let update = this.db.prepare(`DELETE FROM blog where id in (${param.map((_, i) => `?`).join(',')})`)
         update.run(param)
         update.finalize()
         console.log('数据删除成功')

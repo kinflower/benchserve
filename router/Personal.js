@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
         cb(null, uniqueSuffix + path.extname(file.originalname)) // 指定文件名
     }
 });
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage, limits: { fileSize: 1024 * 1024 * 10, files: 1 } });
 
 function Personal({ router, db, url }) {
     let code = null
@@ -151,7 +151,7 @@ function Personal({ router, db, url }) {
         res.send(JSON.stringify({
             code: 200,
             message: '文件上传成功',
-            file: `${req.file.filename}`
+            file: `https://hksofy-hzcsfn-4000.app.cloudstudio.work/${req.file.filename}`
         }));
     })
     router.post("/updateInfo", function (req, res) {

@@ -18,7 +18,7 @@ personal.Personal({router, url, db: db.personal})
 memo.Memo({router, url, db: db.memo})
 setting.Setting({router, url, db: db.setting})
 todo.Todo({router, url, db: db.todo})
-blog.Blog({router, url, db: db.todo})
+blog.Blog({router, url, db: db.blog})
 app.use(router)
 
 app.listen(port, function () {
